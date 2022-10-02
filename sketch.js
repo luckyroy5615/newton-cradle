@@ -10,6 +10,7 @@ var rope1,rope2,rope3, rope4,rope5;
 var world;
 
 
+
 function setup() {
 	createCanvas(800, 600);
 	rectMode(CENTER);
@@ -17,6 +18,8 @@ function setup() {
 
 	engine = Engine.create();
 	world = engine.world;
+
+
 
 	roofObject=new roof(400,250,230,20);
 	bob1 = new bob(320,575,40)
@@ -30,7 +33,8 @@ function setup() {
 	rope3=new rope(bob3.body,roofObject.body,0)
 	rope4=new rope(bob4.body,roofObject.body,40)
 	rope5=new rope(bob5.body,roofObject.body,80)
-	
+    
+   
 	Engine.run(engine);
 	
   
@@ -53,14 +57,14 @@ function draw() {
   bob3.display();
   bob4.display();
   bob5.display();
+
+  
 }
 
 
 function keyPressed() {
 	if (keyCode === UP_ARROW) {
-//WRITE A CORRECT CODE TO APPLY A KEYPRESSED TO CHANGE THE POSITION OF BALL OBJECT TO THE LEFT WHEN UP ARROW KEY IS PRESSED
-
+    //WRITE A CORRECT CODE TO APPLY A KEYPRESSED TO CHANGE THE POSITION OF BALL OBJECT TO THE LEFT WHEN UP ARROW KEY IS PRESSED
+     Matter.Body.applyForce(bob1.body,bob1.body.position,{x:-50,y:-45});
 	}
 }
-
-
